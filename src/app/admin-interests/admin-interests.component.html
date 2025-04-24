@@ -1,0 +1,26 @@
+<div class="container color-dark">
+    <div class="col">
+      <p>Intereses</p>
+    </div>
+  </div>
+  
+  <div class="container color-light">
+    <div class="col">
+      <form>
+        <input type="text" class="txt" name="personal" placeholder="Intereses personales" [(ngModel)]="myInterest.personal"><br>
+        <input type="text" class="txt" name="profesional" placeholder="Intereses profesionales" [(ngModel)]="myInterest.profesional"><br>
+        <input type="submit" class="btn" value="{{ btntxt }}" (click)="agregarInteres()">
+      </form>
+    </div>
+  </div>
+  
+  <div class="col">
+    <div *ngFor="let interes of interests" class="life-container">
+      <input type="text" [(ngModel)]="interes.personal" placeholder="Personal">
+      <input type="text" [(ngModel)]="interes.profesional" placeholder="Profesional">
+      <input type="submit" class="btn" value="Actualizar" (click)="updateInteres(interes)">
+      <input type="submit" class="btn" value="Eliminar" (click)="deleteInteres(interes.id)">
+    </div>
+  </div>
+  
+    

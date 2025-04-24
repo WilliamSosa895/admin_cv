@@ -1,0 +1,33 @@
+<div class="container color-dark">
+    <div class="col">
+      <p>Work Experience Items</p>
+    </div>
+  </div>
+  
+  <div class="container color-light">
+    <div class="col">
+      <form>
+        <input type="text" class="txt" name="startDate" placeholder="Start Date (mm/yyyy)" [(ngModel)]="myWorkExperience.startDate"><br>
+        <input type="text" class="txt" name="endDate" placeholder="End Date (mm/yyyy)" [(ngModel)]="myWorkExperience.endDate"><br>
+        <input type="text" class="txt" name="location" placeholder="Location" [(ngModel)]="myWorkExperience.location"><br>
+        <input type="text" class="txt" name="position" placeholder="Position" [(ngModel)]="myWorkExperience.position"><br>
+        <input type="text" class="txt" name="company" placeholder="Company" [(ngModel)]="myWorkExperience.company"><br>
+        <input type="text" class="txt" name="accomplishments" placeholder="Accomplishments" [(ngModel)]="myWorkExperience.accomplishments"><br>
+        <input type="submit" class="btn" value="{{ btntxt }}" (click)="AgregarJob()">
+      </form>
+    </div>
+  </div>
+  
+  <div class="col">
+    <div *ngFor="let job of workExperience" class="life-container">
+      <input type="text" [(ngModel)]="job.startDate" placeholder="Start Date">
+      <input type="text" [(ngModel)]="job.endDate" placeholder="End Date">
+      <input type="text" [(ngModel)]="job.location" placeholder="Location">
+      <input type="text" [(ngModel)]="job.position" placeholder="Position">
+      <input type="text" [(ngModel)]="job.company" placeholder="Company">
+      <input type="text" [(ngModel)]="job.accomplishments" placeholder="Accomplishments">
+      <input type="submit" class="btn" value="Actualizar" (click)="updateJob(job)">
+      <input type="submit" class="btn" value="Eliminar" (click)="deleteJob(job.id)">
+    </div>
+  </div>
+  

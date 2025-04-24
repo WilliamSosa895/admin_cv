@@ -1,0 +1,29 @@
+<div class="container color-dark">
+    <div class="col">
+      <p>Educación</p>
+    </div>
+  </div>
+  
+  <div class="container color-light">
+    <div class="col">
+      <form>
+        <input type="text" class="txt" name="name" placeholder="Nombre del estudio" [(ngModel)]="myEducation.name"><br>
+        <input type="text" class="txt" name="plantel" placeholder="Institución" [(ngModel)]="myEducation.plantel"><br>
+        <input type="text" class="txt" name="startDate" placeholder="Fecha de inicio" [(ngModel)]="myEducation.startDate"><br>
+        <input type="text" class="txt" name="endDate" placeholder="Fecha de finalización" [(ngModel)]="myEducation.endDate"><br>
+        <input type="submit" class="btn" value="{{ btntxt }}" (click)="agregarEducation()">
+      </form>
+    </div>
+  </div>
+  
+  <div class="col">
+    <div *ngFor="let edu of educations" class="life-container">
+      <input type="text" [(ngModel)]="edu.name" placeholder="Nombre del estudio">
+      <input type="text" [(ngModel)]="edu.plantel" placeholder="Institución">
+      <input type="text" [(ngModel)]="edu.startDate" placeholder="Fecha de inicio">
+      <input type="text" [(ngModel)]="edu.endDate" placeholder="Fecha de finalización">
+      <input type="submit" class="btn" value="Actualizar" (click)="updateEducation(edu)">
+      <input type="submit" class="btn" value="Eliminar" (click)="deleteEducation(edu.id)">
+    </div>
+  </div>
+  

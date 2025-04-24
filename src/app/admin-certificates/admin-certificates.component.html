@@ -1,0 +1,28 @@
+<div class="container color-dark">
+    <div class="col">
+      <p>Certificados</p>
+    </div>
+  </div>
+  
+  <div class="container color-light">
+    <div class="col">
+      <form>
+        <input type="text" class="txt" name="name" placeholder="Nombre del certificado" [(ngModel)]="myCertificate.name"><br>
+        <input type="text" class="txt" name="tipo" placeholder="Tipo" [(ngModel)]="myCertificate.tipo"><br>
+        <input type="text" class="txt" name="fecha" placeholder="Fecha" [(ngModel)]="myCertificate.fecha"><br>
+        <input type="submit" class="btn" value="{{ btntxt }}" (click)="agregarCertificado()">
+      </form>
+    </div>
+  </div>
+  
+  <div class="col">
+    <div *ngFor="let cert of certificates" class="life-container">
+      <input type="text" [(ngModel)]="cert.name" placeholder="Nombre del certificado">
+      <input type="text" [(ngModel)]="cert.tipo" placeholder="Tipo">
+      <input type="text" [(ngModel)]="cert.fecha" placeholder="Fecha">
+      <input type="submit" class="btn" value="Actualizar" (click)="updateCertificado(cert)">
+      <input type="submit" class="btn" value="Eliminar" (click)="deleteCertificado(cert.id)">
+    </div>
+  </div>
+  
+    

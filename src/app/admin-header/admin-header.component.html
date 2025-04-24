@@ -1,0 +1,15 @@
+<div class="container color-light">
+    <div class="col">
+      <form>
+        <input type="text" class="txt" placeholder="Nombre" [(ngModel)]="myHeader.name" name="name"><br>
+        <input type="text" class="txt" placeholder="Meta de vida" [(ngModel)]="myHeader.goalLife" name="goalLife"><br>
+        <input type="text" class="txt" placeholder="Foto URL" [(ngModel)]="myHeader.photoURL" name="photoURL"><br>
+        <input type="text" class="txt" placeholder="Email" [(ngModel)]="myHeader.email" name="email"><br>
+        <input type="text" class="txt" placeholder="Teléfono" [(ngModel)]="myHeader.phoneNumber" name="phoneNumber"><br>
+        <input type="text" class="txt" placeholder="Ubicación" [(ngModel)]="myHeader.location" name="location"><br>
+        <input type="text" class="txt" placeholder="Red Social" [(ngModel)]="myHeader.socialNetwork" name="socialNetwork"><br>
+        <input type="submit" class="btn" value="Actualizar" (click)="actualizarHeader()">
+      </form>
+    </div>
+  </div>
+  

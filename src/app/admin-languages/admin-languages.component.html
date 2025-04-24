@@ -1,0 +1,25 @@
+<div class="container color-dark">
+    <div class="col">
+      <p>Idiomas</p>
+    </div>
+  </div>
+  
+  <div class="container color-light">
+    <div class="col">
+      <form>
+        <input type="text" class="txt" name="lenguaMaterna" placeholder="Lengua materna" [(ngModel)]="myLanguage.lenguaMaterna"><br>
+        <input type="text" class="txt" name="other" placeholder="Otros idiomas" [(ngModel)]="myLanguage.other"><br>
+        <input type="submit" class="btn" value="{{ btntxt }}" (click)="agregarLenguaje()">
+      </form>
+    </div>
+  </div>
+  
+  <div class="col">
+    <div *ngFor="let lang of languages" class="life-container">
+      <input type="text" [(ngModel)]="lang.lenguaMaterna" placeholder="Lengua materna">
+      <input type="text" [(ngModel)]="lang.other" placeholder="Otros idiomas">
+      <input type="submit" class="btn" value="Actualizar" (click)="updateLenguaje(lang)">
+      <input type="submit" class="btn" value="Eliminar" (click)="deleteLenguaje(lang.id)">
+    </div>
+  </div>
+  
