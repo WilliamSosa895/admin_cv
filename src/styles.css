@@ -7,8 +7,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
-  margin: 0;
+  min-height: 90vh;
+  margin: 20;
 }
 
 /* Navbar */
@@ -45,8 +45,8 @@ form {
   padding: 2em;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  max-width: 400px;
-  width: 100%;
+  max-width: auto;
+  width: 1000;
   display: flex;
   flex-direction: column;
   gap: 1em;
@@ -77,4 +77,58 @@ button {
 
 button:hover {
   background-color: #f1c40f;
+}
+
+
+/* ——— Ajustes para recuadros blancos más pequeños ——— */
+
+/* Inputs y textareas encogibles */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  display: inline-block;   /* ancho según contenido */
+  width: auto;             /* sin ancho fijo */
+  padding: 0.3em 0.2em;    /* padding reducido */
+  font-size: 0.9em;        /* tamaño más compacto */
+}
+
+/* Contenedor genérico de ítems */
+.list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5em;
+  margin-top: 1em;
+}
+
+/* Cada recuadro blanco */
+.list-item {
+  display: inline-flex;       /* ancho automático */
+  align-items: center;
+  padding: 0.2em 0.4em;      /* padding muy reducido */
+  background: #fff;
+  color: #333;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.0);
+  gap: 0.4em;
+  font-size: 0.4em;          /* ligeramente más pequeño */
+}
+
+/* Botones dentro del recuadro */
+.list-item .actions button {
+  padding: 0.1em 0.3em;      /* padding mínimo */
+  font-size: 0.120em;         /* texto pequeño */
+}
+
+/* Reducir espacio entre campos de entrada (en todos los formularios) */
+form {
+  gap: 0.0em;               /* menos separación entre elementos */
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form textarea {
+  margin-bottom: 0;         /* anula márgenes extra */
 }
